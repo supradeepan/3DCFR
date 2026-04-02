@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 #include "Main.h"
-#include"PreSolver.h"
-#include"PreSolver.c"
+#include "PreSolver.h"
+#include "PreSolver.c"
 
 int main() {
     time_t start, end;
@@ -15,6 +15,8 @@ int main() {
     double dif;
     int NoOfElements, NoOfNodes, NoOfBoundaryElements;
     int Iter;
+
+	time (&start);
 
     GetNoOfElemAndNodes(&NoOfElements, &NoOfNodes);
 
@@ -77,7 +79,7 @@ void GetNoOfElemAndNodes(int *NElem, int *NNode)
 		sprintf(FileElemName,".//Mesh//Elements.neu");
 		break;
 	default:
-		printf("\n OS version and Compiler Version Error.\nProgram Terminated.\n\n");
+		printf("OS version and Compiler Version Error.\nProgram Terminated.\n\n");
 		exit(0);
 	}
 	

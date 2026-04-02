@@ -8,5 +8,13 @@
     void WriteNodalPLTFILE(int NoOfElements, int NoOfNodes, CELLDETAILS *CC, NODE *Node);
     void FindNeighbour(int Elem, int NoOfElements, CELLDETAILS *CC);
     void CalculateOutwordNormals(int NoOfElements, CELLDETAILS *CC, NODE *Node);
+    void CalculateVolume(int NoOfElements, CELLDETAILS *CC, NODE *Node);
+    void CalculateFaceArea(int NoOfElements, CELLDETAILS *CC, NODE *Node);
+    void FormStencil(int NoOfElements, CELLDETAILS *CC, NODE *Node);
+    void FindKs(int NoOfElements, CELLDETAILS *CC);
+    //void FindLSCoeffienents(int NoOfElements, CELLDETAILS *CC, NODE *Node);
+    //void Test(int NoOfElements, CELLDETAILS *CC);
+    //void PointsOnBody(int NoOfNodes, NODE *Node);   
+
     #define CODE 7 // NoOf Boundaries
 #endif

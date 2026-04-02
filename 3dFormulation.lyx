@@ -1,0 +1,2732 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\makeatother
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding iso8859-15
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 2
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\headheight 0cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+CFR FORMULATION FOR TETRAHEDRAL CELLS
+\end_layout
+
+\begin_layout Standard
+Cell Arrangements
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cell 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Face 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 3,
+ 4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,
+ 3,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+d 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 3,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace 0.25cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cell 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Face 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 3,
+ 5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+f 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,
+ 3,
+ 5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+g 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 3,
+ 5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace 0.25cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cell 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Face 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 4,
+ 6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+h 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 4,
+ 6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+i 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,
+ 4,
+ 6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+j 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 2,
+ 6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace 0.25cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cell 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Face 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,
+ 3,
+ 4,
+ 7 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,
+ 2,
+ 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+l 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,
+ 2,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,
+ 3,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,
+ 3,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace 0.25cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cell 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Face 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 8,
+ 3,
+ 4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+p 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 8,
+ 3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+o 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 8,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+n 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8,
+ 3,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+d 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,
+ 3,
+ 4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace 1.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Continuity Equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+\frac{\partial w}{\partial z}=0$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Momentum Equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial u}{\partial t}+\frac{\partial u^{2}}{\partial x}+\frac{\partial uv}{\partial y}+\frac{\partial uw}{\partial z}=-\frac{\partial p}{\partial x}+\frac{1}{Re}\left[\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}+\frac{\partial^{2}u}{\partial z^{2}}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial v}{\partial t}+\frac{\partial uv}{\partial x}+\frac{\partial v^{2}}{\partial y}+\frac{\partial vw}{\partial z}=-\frac{\partial p}{\partial y}+\frac{1}{Re}\left[\frac{\partial^{2}v}{\partial x^{2}}+\frac{\partial^{2}v}{\partial y^{2}}+\frac{\partial^{2}v}{\partial z^{2}}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\partial w}{\partial t}+\frac{\partial uw}{\partial x}+\frac{\partial vw}{\partial y}+\frac{\partial w^{2}}{\partial z}=-\frac{\partial p}{\partial z}+\frac{1}{Re}\left[\frac{\partial^{2}w}{\partial x^{2}}+\frac{\partial^{2}w}{\partial y^{2}}+\frac{\partial^{2}w}{\partial z^{2}}\right]$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Considering Euler Interploation 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\emptyset^{n+1}-\emptyset^{n}}{\triangle t}=L\left(\emptyset^{n}\right)$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+Cell Face Velocities Across Face 'a' 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u_{a}^{n+1}=u_{a}^{n}+\frac{\triangle t}{\triangle\Omega_{a}}\left[-XCFLUX_{a}-XPFLUX_{a}+\nicefrac{1}{Re}\star XDFLUX_{a}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{a}^{n+1}=v_{a}^{n}+\frac{\triangle t}{\triangle\Omega_{a}}\left[-YCFLUX_{a}-YPFLUX_{a}+\nicefrac{1}{Re}\star YDFLUX_{a}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $w_{a}^{n+1}=w_{a}^{n}+\frac{\triangle t}{\triangle\Omega_{a}}\left[-ZCFLUX_{a}-ZPFLUX_{a}+\nicefrac{1}{Re}\star ZDFLUX_{a}\right]$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cell Face Velocities Across Face 'b'
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u_{b}^{n+1}=u_{b}^{n}+\frac{\triangle t}{\triangle\Omega_{b}}\left[-XCFLUX_{b}-XPFLUX_{b}+\nicefrac{1}{Re}\star XDFLUX_{b}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{b}^{n+1}=v_{b}^{n}+\frac{\triangle t}{\triangle\Omega_{b}}\left[-YCFLUX_{b}-YPFLUX_{b}+\nicefrac{1}{Re}\star YDFLUX_{b}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $w_{b}^{n+1}=w_{b}^{n}+\frac{\triangle t}{\triangle\Omega_{b}}\left[-ZCFLUX_{b}-ZPFLUX_{b}+\nicefrac{1}{Re}\star ZDFLUX_{b}\right]$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cell Face Velocities Across Face 'c'
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u_{c}^{n+1}=u_{c}^{n}+\frac{\triangle t}{\triangle\Omega_{c}}\left[-XCFLUX_{c}-XPFLUX_{c}+\nicefrac{1}{Re}\star XDFLUX_{c}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{c}^{n+1}=v_{c}^{n}+\frac{\triangle t}{\triangle\Omega_{c}}\left[-YCFLUX_{c}-YPFLUX_{c}+\nicefrac{1}{Re}\star YDFLUX_{c}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $w_{c}^{n+1}=w_{c}^{n}+\frac{\triangle t}{\triangle\Omega_{c}}\left[-ZCFLUX_{c}-ZPFLUX_{c}+\nicefrac{1}{Re}\star ZDFLUX_{c}\right]$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cell Face Velocities Across Face 'd'
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $u_{d}^{n+1}=u_{d}^{n}+\frac{\triangle t}{\triangle\Omega_{d}}\left[-XCFLUX_{d}-XPFLUX_{d}+\nicefrac{1}{Re}\star XDFLUX_{d}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{d}^{n+1}=v_{d}^{n}+\frac{\triangle t}{\triangle\Omega_{d}}\left[-YCFLUX_{d}-YPFLUX_{d}+\nicefrac{1}{Re}\star YDFLUX_{d}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $w_{d}^{n+1}=w_{d}^{n}+\frac{\triangle t}{\triangle\Omega_{d}}\left[-ZCFLUX_{d}-ZPFLUX_{d}+\nicefrac{1}{Re}\star ZDFLUX_{d}\right]$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\triangle\Omega_{a}=VolumeP+VolumeA$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\triangle\Omega_{b}=VolumeP+VolumeB$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\triangle\Omega_{c}=VolumeP+VolumeC$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\triangle\Omega_{d}=VolumeP+VolumeD$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using Gauss Divergence Theorem
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\underset{v}{\iiint}\left(\nabla\cdot F\right)dV=\underset{s}{\oiint}\left(F\cdot\hat{n}\right)dS$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For Face 'a'
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $XCFLUX_{a}=\left\{ \begin{array}{c}
+\left(u_{b}^{2}\hat{n}_{bx}+u_{b}v_{b}\hat{n}_{by}+u_{b}w_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{c}^{2}\hat{n}_{cx}+u_{c}v_{c}\hat{n}_{cy}+u_{c}w_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{d}^{2}\hat{n}_{dx}+u_{d}v_{d}\hat{n}_{dy}+u_{d}w_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(u_{e}^{2}\hat{n}_{ex}+u_{e}v_{e}\hat{n}_{ey}+u_{e}w_{e}\hat{n}_{ez}\right)\triangle A_{e}+\\
+\left(u_{f}^{2}\hat{n}_{fx}+u_{f}v_{f}\hat{n}_{fy}+u_{f}w_{f}\hat{n}_{fz}\right)\triangle A_{f}+\\
+\left(u_{g}^{2}\hat{n}_{gx}+u_{g}v_{g}\hat{n}_{gy}+u_{g}w_{g}\hat{n}_{gz}\right)\triangle A_{g}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $XPFLUX_{a}=p_{b}\hat{n}_{bx}\triangle A_{b}+p_{c}\hat{n}_{cx}\triangle A_{c}+p_{d}\hat{n}_{dx}\triangle A_{d}+p_{e}\hat{n}_{ex}\triangle A_{e}+p_{f}\hat{n}_{fx}\triangle A_{f}+p_{g}\hat{n}_{gx}\triangle A_{g}$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $XDFLUX_{a}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial u}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial u}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial u}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial u}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial u}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial u}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial u}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{e}\hat{n}_{ex}+\left(\frac{\partial u}{\partial y}\right)_{e}\hat{n}_{ey}+\left(\frac{\partial u}{\partial z}\right)_{e}\hat{n}_{ez}\right)\triangle A_{e}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{f}\hat{n}_{fx}+\left(\frac{\partial u}{\partial y}\right)_{f}\hat{n}_{fy}+\left(\frac{\partial u}{\partial z}\right)_{f}\hat{n}_{fz}\right)\triangle A_{f}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{g}\hat{n}_{gx}+\left(\frac{\partial u}{\partial y}\right)_{g}\hat{n}_{gy}+\left(\frac{\partial u}{\partial z}\right)_{g}\hat{n}_{gz}\right)\triangle A_{g}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $YCFLUX_{a}=\left\{ \begin{array}{c}
+\left(u_{b}v_{b}\hat{n}_{bx}+v_{b}^{2}\hat{n}_{by}+v_{b}w_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{c}v_{c}\hat{n}_{cx}+v_{c}^{2}\hat{n}_{cy}+v_{c}w_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{d}v_{d}\hat{n}_{dx}+v_{d}^{2}\hat{n}_{dy}+v_{d}w_{d}\hat{n}_{bdz}\right)\triangle A_{d}+\\
+\left(u_{e}v_{e}\hat{n}_{ex}+v_{e}^{2}\hat{n}_{ey}+v_{e}w_{e}\hat{n}_{ez}\right)\triangle A_{e}+\\
+\left(u_{f}v_{f}\hat{n}_{fx}+v_{f}^{2}\hat{n}_{fy}+v_{f}w_{f}\hat{n}_{fz}\right)\triangle A_{f}+\\
+\left(u_{g}v_{g}\hat{n}_{gx}+v_{g}^{2}\hat{n}_{gy}+v_{g}w_{g}\hat{n}_{gz}\right)\triangle A_{g}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $YPFLUX_{a}=p_{b}\hat{n}_{by}\triangle A_{b}+p_{c}\hat{n}_{cy}\triangle A_{c}+p_{d}\hat{n}_{dy}\triangle A_{d}+p_{e}\hat{n}_{ey}\triangle A_{e}+p_{f}\hat{n}_{fy}\triangle A_{f}+p_{g}\hat{n}_{gy}\triangle A_{g}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $YDFLUX_{a}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial v}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial v}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial v}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial v}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial v}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial v}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial v}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{e}\hat{n}_{ex}+\left(\frac{\partial v}{\partial y}\right)_{e}\hat{n}_{ey}+\left(\frac{\partial v}{\partial z}\right)_{e}\hat{n}_{ez}\right)\triangle A_{e}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{f}\hat{n}_{fx}+\left(\frac{\partial v}{\partial y}\right)_{f}\hat{n}_{fy}+\left(\frac{\partial v}{\partial z}\right)_{f}\hat{n}_{fz}\right)\triangle A_{f}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{g}\hat{n}_{gx}+\left(\frac{\partial v}{\partial y}\right)_{g}\hat{n}_{gy}+\left(\frac{\partial v}{\partial z}\right)_{g}\hat{n}_{gz}\right)\triangle A_{g}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $ZCFLUX_{a}=\left\{ \begin{array}{c}
+\left(u_{b}w_{b}\hat{n}_{bx}+v_{b}w_{b}\hat{n}_{by}+w_{b}^{2}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{c}w_{c}\hat{n}_{cx}+v_{c}w_{c}\hat{n}_{cy}+w_{c}^{2}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{d}w_{d}\hat{n}_{dx}+v_{d}w_{d}\hat{n}_{dy}+w_{d}^{2}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(u_{e}w_{e}\hat{n}_{ex}+v_{e}w_{e}\hat{n}_{ey}+w_{e}^{2}\hat{n}_{ez}\right)\triangle A_{e}+\\
+\left(u_{f}w_{f}\hat{n}_{fx}+v_{f}w_{f}\hat{n}_{fy}+w_{f}^{2}\hat{n}_{fz}\right)\triangle A_{f}+\\
+\left(u_{g}w_{g}\hat{n}_{gx}+v_{g}w_{g}\hat{n}_{gy}+w_{g}^{2}\hat{n}_{gz}\right)\triangle A_{g}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ZPFLUX_{a}=p_{b}\hat{n}_{bz}\triangle A_{b}+p_{c}\hat{n}_{cz}\triangle A_{c}+p_{d}\hat{n}_{dz}\triangle A_{d}+p_{e}\hat{n}_{ez}\triangle A_{e}+p_{f}\hat{n}_{fz}\triangle A_{f}+p_{g}\hat{n}_{gz}\triangle A_{g}$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $ZDFLUX_{a}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial w}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial w}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial w}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial w}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial w}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial w}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial w}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{e}\hat{n}_{ex}+\left(\frac{\partial w}{\partial y}\right)_{e}\hat{n}_{ey}+\left(\frac{\partial w}{\partial z}\right)_{e}\hat{n}_{ez}\right)\triangle A_{e}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{f}\hat{n}_{fx}+\left(\frac{\partial w}{\partial y}\right)_{f}\hat{n}_{fy}+\left(\frac{\partial w}{\partial z}\right)_{f}\hat{n}_{fz}\right)\triangle A_{f}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{g}\hat{n}_{gx}+\left(\frac{\partial w}{\partial y}\right)_{g}\hat{n}_{gy}+\left(\frac{\partial w}{\partial z}\right)_{g}\hat{n}_{gz}\right)\triangle A_{g}
+\end{array}\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For Face 'b'
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $XCFLUX_{b}=\left\{ \begin{array}{c}
+\left(u_{a}^{2}\hat{n}_{ax}+u_{a}v_{a}\hat{n}_{ay}+u_{a}w_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{c}^{2}\hat{n}_{cx}+u_{c}v_{c}\hat{n}_{cy}+u_{c}w_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{d}^{2}\hat{n}_{dx}+u_{d}v_{d}\hat{n}_{dy}+u_{d}w_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(u_{h}^{2}\hat{n}_{hx}+u_{h}v_{h}\hat{n}_{hy}+u_{h}w_{h}\hat{n}_{hz}\right)\triangle A_{h}+\\
+\left(u_{i}^{2}\hat{n}_{ix}+u_{i}v_{i}\hat{n}_{iy}+u_{i}w_{i}\hat{n}_{iz}\right)\triangle A_{i}+\\
+\left(u_{j}^{2}\hat{n}_{jx}+u_{j}v_{j}\hat{n}_{jy}+u_{j}w_{j}\hat{n}_{jz}\right)\triangle A_{j}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $XPFLUX_{b}=p_{a}\hat{n}_{ax}\triangle A_{a}+p_{c}\hat{n}_{cx}\triangle A_{c}+p_{d}\hat{n}_{dx}\triangle A_{d}+p_{h}\hat{n}_{hx}\triangle A_{h}+p_{i}\hat{n}_{ix}\triangle A_{i}+p_{j}\hat{n}_{jx}\triangle A_{j}$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $XDFLUX_{b}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial u}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial u}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial u}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial u}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial u}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial u}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial u}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{h}\hat{n}_{hx}+\left(\frac{\partial u}{\partial y}\right)_{h}\hat{n}_{hy}+\left(\frac{\partial u}{\partial z}\right)_{h}\hat{n}_{hz}\right)\triangle A_{h}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{i}\hat{n}_{ix}+\left(\frac{\partial u}{\partial y}\right)_{i}\hat{n}_{iy}+\left(\frac{\partial u}{\partial z}\right)_{i}\hat{n}_{iz}\right)\triangle A_{i}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{j}\hat{n}_{jx}+\left(\frac{\partial u}{\partial y}\right)_{j}\hat{n}_{jy}+\left(\frac{\partial u}{\partial z}\right)_{j}\hat{n}_{jz}\right)\triangle A_{j}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $YCFLUX_{b}=\left\{ \begin{array}{c}
+\left(u_{a}v_{a}\hat{n}_{ax}+v_{a}^{2}\hat{n}_{ay}+v_{a}w_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{c}v_{c}\hat{n}_{cx}+v_{c}^{2}\hat{n}_{cy}+v_{c}w_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{d}v_{d}\hat{n}_{dx}+v_{d}^{2}\hat{n}_{dy}+v_{d}w_{d}\hat{n}_{bdz}\right)\triangle A_{d}+\\
+\left(u_{h}v_{h}\hat{n}_{hx}+v_{h}^{2}\hat{n}_{hy}+v_{h}w_{h}\hat{n}_{hz}\right)\triangle A_{h}+\\
+\left(u_{i}v_{i}\hat{n}_{ix}+v_{i}^{2}\hat{n}_{iy}+v_{i}w_{i}\hat{n}_{iz}\right)\triangle A_{i}+\\
+\left(u_{j}v_{j}\hat{n}_{jx}+v_{j}^{2}\hat{n}_{jy}+v_{j}w_{j}\hat{n}_{jz}\right)\triangle A_{j}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $YPFLUX_{b}=p_{a}\hat{n}_{ay}\triangle A_{a}+p_{c}\hat{n}_{cy}\triangle A_{c}+p_{d}\hat{n}_{dy}\triangle A_{d}+p_{h}\hat{n}_{hy}\triangle A_{h}+p_{i}\hat{n}_{iy}\triangle A_{i}+p_{j}\hat{n}_{jy}\triangle A_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $YDFLUX_{b}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial v}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial v}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial v}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial v}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial v}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial v}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial v}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{h}\hat{n}_{hx}+\left(\frac{\partial v}{\partial y}\right)_{h}\hat{n}_{hy}+\left(\frac{\partial v}{\partial z}\right)_{h}\hat{n}_{hz}\right)\triangle A_{h}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{i}\hat{n}_{ix}+\left(\frac{\partial v}{\partial y}\right)_{i}\hat{n}_{iy}+\left(\frac{\partial v}{\partial z}\right)_{i}\hat{n}_{iz}\right)\triangle A_{i}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{j}\hat{n}_{jx}+\left(\frac{\partial v}{\partial y}\right)_{j}\hat{n}_{jy}+\left(\frac{\partial v}{\partial z}\right)_{j}\hat{n}_{jz}\right)\triangle A_{j}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $ZCFLUX_{b}=\left\{ \begin{array}{c}
+\left(u_{a}w_{a}\hat{n}_{ax}+v_{a}w_{a}\hat{n}_{ay}+w_{a}^{2}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{c}w_{c}\hat{n}_{cx}+v_{c}w_{c}\hat{n}_{cy}+w_{c}^{2}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{d}w_{d}\hat{n}_{dx}+v_{d}w_{d}\hat{n}_{dy}+w_{d}^{2}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(u_{h}w_{h}\hat{n}_{hx}+v_{h}w_{h}\hat{n}_{hy}+w_{h}^{2}\hat{n}_{hz}\right)\triangle A_{h}+\\
+\left(u_{i}w_{i}\hat{n}_{ix}+v_{i}w_{i}\hat{n}_{iy}+w_{i}^{2}\hat{n}_{iz}\right)\triangle A_{i}+\\
+\left(u_{j}w_{j}\hat{n}_{jx}+v_{j}w_{j}\hat{n}_{jy}+w_{j}^{2}\hat{n}_{jz}\right)\triangle A_{j}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ZPFLUX_{b}=p_{a}\hat{n}_{az}\triangle A_{a}+p_{c}\hat{n}_{cz}\triangle A_{c}+p_{d}\hat{n}_{dz}\triangle A_{d}+p_{h}\hat{n}_{hz}\triangle A_{h}+p_{i}\hat{n}_{iz}\triangle A_{i}+p_{j}\hat{n}_{jz}\triangle A_{j}$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $ZDFLUX_{b}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial w}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial w}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial w}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial w}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial w}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial w}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial w}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{h}\hat{n}_{hx}+\left(\frac{\partial w}{\partial y}\right)_{h}\hat{n}_{hy}+\left(\frac{\partial w}{\partial z}\right)_{h}\hat{n}_{hz}\right)\triangle A_{h}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{i}\hat{n}_{ix}+\left(\frac{\partial w}{\partial y}\right)_{i}\hat{n}_{iy}+\left(\frac{\partial w}{\partial z}\right)_{i}\hat{n}_{iz}\right)\triangle A_{i}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{j}\hat{n}_{jx}+\left(\frac{\partial w}{\partial y}\right)_{j}\hat{n}_{jy}+\left(\frac{\partial w}{\partial z}\right)_{j}\hat{n}_{jz}\right)\triangle A_{j}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For Face 'c'
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $XCFLUX_{c}=\left\{ \begin{array}{c}
+\left(u_{a}^{2}\hat{n}_{ax}+u_{a}v_{a}\hat{n}_{ay}+u_{a}w_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{b}^{2}\hat{n}_{bx}+u_{b}v_{b}\hat{n}_{by}+u_{b}w_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{d}^{2}\hat{n}_{dx}+u_{d}v_{d}\hat{n}_{dy}+u_{d}w_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(u_{k}^{2}\hat{n}_{kx}+u_{k}v_{k}\hat{n}_{ky}+u_{k}w_{k}\hat{n}_{kz}\right)\triangle A_{k}+\\
+\left(u_{l}^{2}\hat{n}_{lx}+u_{l}v_{l}\hat{n}_{ly}+u_{l}w_{l}\hat{n}_{lz}\right)\triangle A_{l}+\\
+\left(u_{m}^{2}\hat{n}_{mx}+u_{m}v_{m}\hat{n}_{my}+u_{m}w_{m}\hat{n}_{mz}\right)\triangle A_{m}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $XPFLUX_{c}=p_{a}\hat{n}_{ax}\triangle A_{a}+p_{b}\hat{n}_{bx}\triangle A_{b}+p_{d}\hat{n}_{dx}\triangle A_{d}+p_{k}\hat{n}_{kx}\triangle A_{k}+p_{l}\hat{n}_{lx}\triangle A_{l}+p_{m}\hat{n}_{mx}\triangle A_{m}$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $XDFLUX_{c}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial u}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial u}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial u}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial u}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial u}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial u}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial u}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{k}\hat{n}_{kx}+\left(\frac{\partial u}{\partial y}\right)_{k}\hat{n}_{ky}+\left(\frac{\partial u}{\partial z}\right)_{k}\hat{n}_{kz}\right)\triangle A_{k}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{l}\hat{n}_{lx}+\left(\frac{\partial u}{\partial y}\right)_{l}\hat{n}_{ly}+\left(\frac{\partial u}{\partial z}\right)_{l}\hat{n}_{lz}\right)\triangle A_{l}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{m}\hat{n}_{mx}+\left(\frac{\partial u}{\partial y}\right)_{m}\hat{n}_{my}+\left(\frac{\partial u}{\partial z}\right)_{m}\hat{n}_{mz}\right)\triangle A_{m}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $YCFLUX_{c}=\left\{ \begin{array}{c}
+\left(u_{a}v_{a}\hat{n}_{ax}+v_{a}^{2}\hat{n}_{ay}+v_{a}w_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{b}v_{b}\hat{n}_{bx}+v_{b}^{2}\hat{n}_{by}+v_{b}w_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{d}v_{d}\hat{n}_{dx}+v_{d}^{2}\hat{n}_{dy}+v_{d}w_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(u_{k}v_{k}\hat{n}_{kx}+v_{k}^{2}\hat{n}_{ky}+v_{k}w_{k}\hat{n}_{kz}\right)\triangle A_{k}+\\
+\left(u_{l}v_{l}\hat{n}_{lx}+v_{l}^{2}\hat{n}_{ly}+v_{l}w_{l}\hat{n}_{lz}\right)\triangle A_{l}+\\
+\left(u_{m}v_{m}\hat{n}_{mx}+v_{m}^{2}\hat{n}_{my}+v_{m}w_{m}\hat{n}_{mz}\right)\triangle A_{m}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $YPFLUX_{c}=p_{a}\hat{n}_{ay}\triangle A_{a}+p_{b}\hat{n}_{by}\triangle A_{b}+p_{d}\hat{n}_{dy}\triangle A_{d}+p_{k}\hat{n}_{ky}\triangle A_{k}+p_{l}\hat{n}_{ly}\triangle A_{l}+p_{m}\hat{n}_{my}\triangle A_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $YDFLUX_{c}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial v}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial v}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial v}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial v}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial v}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial v}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial v}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{k}\hat{n}_{kx}+\left(\frac{\partial v}{\partial y}\right)_{k}\hat{n}_{ky}+\left(\frac{\partial v}{\partial z}\right)_{k}\hat{n}_{kz}\right)\triangle A_{k}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{l}\hat{n}_{lx}+\left(\frac{\partial v}{\partial y}\right)_{l}\hat{n}_{ly}+\left(\frac{\partial v}{\partial z}\right)_{l}\hat{n}_{lz}\right)\triangle A_{l}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{m}\hat{n}_{mx}+\left(\frac{\partial v}{\partial y}\right)_{m}\hat{n}_{my}+\left(\frac{\partial v}{\partial z}\right)_{m}\hat{n}_{mz}\right)\triangle A_{m}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $ZCFLUX_{c}=\left\{ \begin{array}{c}
+\left(u_{a}w_{a}\hat{n}_{ax}+v_{a}w_{a}\hat{n}_{ay}+w_{a}^{2}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{b}w_{b}\hat{n}_{bx}+v_{b}w_{b}\hat{n}_{by}+w_{b}^{2}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{d}w_{d}\hat{n}_{dx}+v_{d}w_{d}\hat{n}_{dy}+w_{d}^{2}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(u_{k}w_{k}\hat{n}_{kx}+v_{k}w_{k}\hat{n}_{ky}+w_{k}^{2}\hat{n}_{kz}\right)\triangle A_{k}+\\
+\left(u_{l}w_{l}\hat{n}_{lx}+v_{l}w_{l}\hat{n}_{ly}+w_{l}^{2}\hat{n}_{lz}\right)\triangle A_{l}+\\
+\left(u_{m}w_{m}\hat{n}_{mx}+v_{m}w_{m}\hat{n}_{my}+w_{m}^{2}\hat{n}_{mz}\right)\triangle A_{m}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ZPFLUX_{c}=p_{a}\hat{n}_{az}\triangle A_{a}+p_{b}\hat{n}_{bz}\triangle A_{b}+p_{d}\hat{n}_{dz}\triangle A_{d}+p_{k}\hat{n}_{kz}\triangle A_{k}+p_{l}\hat{n}_{lz}\triangle A_{l}+p_{m}\hat{n}_{mz}\triangle A_{m}$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $ZDFLUX_{c}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial w}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial w}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial w}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial w}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial w}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{d}\hat{n}_{dx}+\left(\frac{\partial w}{\partial y}\right)_{d}\hat{n}_{dy}+\left(\frac{\partial w}{\partial z}\right)_{d}\hat{n}_{dz}\right)\triangle A_{d}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{k}\hat{n}_{kx}+\left(\frac{\partial w}{\partial y}\right)_{k}\hat{n}_{ky}+\left(\frac{\partial w}{\partial z}\right)_{k}\hat{n}_{kz}\right)\triangle A_{k}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{l}\hat{n}_{lx}+\left(\frac{\partial w}{\partial y}\right)_{l}\hat{n}_{ly}+\left(\frac{\partial w}{\partial z}\right)_{l}\hat{n}_{lz}\right)\triangle A_{l}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{m}\hat{n}_{mx}+\left(\frac{\partial w}{\partial y}\right)_{m}\hat{n}_{my}+\left(\frac{\partial w}{\partial z}\right)_{m}\hat{n}_{mz}\right)\triangle A_{m}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For Face 'd'
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $XCFLUX_{d}=\left\{ \begin{array}{c}
+\left(u_{a}^{2}\hat{n}_{ax}+u_{a}v_{a}\hat{n}_{ay}+u_{a}w_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{b}^{2}\hat{n}_{bx}+u_{b}v_{b}\hat{n}_{by}+u_{b}w_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{c}^{2}\hat{n}_{cx}+u_{c}v_{c}\hat{n}_{cy}+u_{c}w_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{n}^{2}\hat{n}_{nx}+u_{n}v_{n}\hat{n}_{ny}+u_{n}w_{n}\hat{n}_{nz}\right)\triangle A_{n}+\\
+\left(u_{o}^{2}\hat{n}_{ox}+u_{o}v_{o}\hat{n}_{oy}+u_{o}w_{o}\hat{n}_{oz}\right)\triangle A_{o}+\\
+\left(u_{p}^{2}\hat{n}_{px}+u_{p}v_{p}\hat{n}_{py}+u_{p}w_{p}\hat{n}_{pz}\right)\triangle A_{p}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $XPFLUX_{d}=p_{a}\hat{n}_{ax}\triangle A_{a}+p_{b}\hat{n}_{bx}\triangle A_{b}+p_{c}\hat{n}_{cx}\triangle A_{c}+p_{n}\hat{n}_{nx}\triangle A_{n}+p_{o}\hat{n}_{ox}\triangle A_{o}+p_{p}\hat{n}_{px}\triangle A_{p}$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $XDFLUX_{d}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial u}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial u}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial u}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial u}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial u}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial u}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial u}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{n}\hat{n}_{nx}+\left(\frac{\partial u}{\partial y}\right)_{n}\hat{n}_{ny}+\left(\frac{\partial u}{\partial z}\right)_{n}\hat{n}_{nz}\right)\triangle A_{n}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{o}\hat{n}_{ox}+\left(\frac{\partial u}{\partial y}\right)_{o}\hat{n}_{oy}+\left(\frac{\partial u}{\partial z}\right)_{o}\hat{n}_{oz}\right)\triangle A_{o}+\\
+\left(\left(\frac{\partial u}{\partial x}\right)_{p}\hat{n}_{px}+\left(\frac{\partial u}{\partial y}\right)_{p}\hat{n}_{py}+\left(\frac{\partial u}{\partial z}\right)_{p}\hat{n}_{pz}\right)\triangle A_{p}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $YCFLUX_{d}=\left\{ \begin{array}{c}
+\left(u_{a}v_{a}\hat{n}_{ax}+v_{a}^{2}\hat{n}_{ay}+v_{a}w_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{b}v_{b}\hat{n}_{bx}+v_{b}^{2}\hat{n}_{by}+v_{b}w_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{c}v_{c}\hat{n}_{cx}+v_{c}^{2}\hat{n}_{cy}+v_{c}w_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{n}v_{n}\hat{n}_{nx}+v_{n}^{2}\hat{n}_{ny}+v_{n}w_{n}\hat{n}_{nz}\right)\triangle A_{n}+\\
+\left(u_{o}v_{o}\hat{n}_{ox}+v_{o}^{2}\hat{n}_{oy}+v_{o}w_{o}\hat{n}_{oz}\right)\triangle A_{o}+\\
+\left(u_{p}v_{p}\hat{n}_{px}+v_{p}^{2}\hat{n}_{py}+v_{p}w_{p}\hat{n}_{pz}\right)\triangle A_{p}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $YPFLUX_{d}=p_{a}\hat{n}_{ay}\triangle A_{a}+p_{b}\hat{n}_{by}\triangle A_{b}+p_{c}\hat{n}_{cy}\triangle A_{c}+p_{n}\hat{n}_{ny}\triangle A_{n}+p_{o}\hat{n}_{oy}\triangle A_{o}+p_{p}\hat{n}_{py}\triangle A_{p}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $YDFLUX_{d}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial v}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial v}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial v}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial v}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial v}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial v}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial v}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{n}\hat{n}_{nx}+\left(\frac{\partial v}{\partial y}\right)_{n}\hat{n}_{ny}+\left(\frac{\partial v}{\partial z}\right)_{n}\hat{n}_{nz}\right)\triangle A_{n}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{o}\hat{n}_{ox}+\left(\frac{\partial v}{\partial y}\right)_{o}\hat{n}_{oy}+\left(\frac{\partial v}{\partial z}\right)_{o}\hat{n}_{oz}\right)\triangle A_{o}+\\
+\left(\left(\frac{\partial v}{\partial x}\right)_{p}\hat{n}_{px}+\left(\frac{\partial v}{\partial y}\right)_{p}\hat{n}_{py}+\left(\frac{\partial v}{\partial z}\right)_{p}\hat{n}_{pz}\right)\triangle A_{p}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $ZCFLUX_{d}=\left\{ \begin{array}{c}
+\left(u_{a}w_{a}\hat{n}_{ax}+v_{a}w_{a}\hat{n}_{ay}+w_{a}^{2}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{b}w_{b}\hat{n}_{bx}+v_{b}w_{b}\hat{n}_{by}+w_{b}^{2}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{c}w_{c}\hat{n}_{cx}+v_{c}w_{c}\hat{n}_{cy}+w_{c}^{2}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{n}w_{n}\hat{n}_{nx}+v_{n}w_{n}\hat{n}_{ny}+w_{n}^{2}\hat{n}_{nz}\right)\triangle A_{n}+\\
+\left(u_{o}w_{o}\hat{n}_{ox}+v_{o}w_{o}\hat{n}_{oy}+w_{o}^{2}\hat{n}_{oz}\right)\triangle A_{o}+\\
+\left(u_{p}w_{p}\hat{n}_{px}+v_{p}w_{p}\hat{n}_{py}+w_{p}^{2}\hat{n}_{pz}\right)\triangle A_{p}
+\end{array}\right.$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ZPFLUX_{d}=p_{a}\hat{n}_{az}\triangle A_{a}+p_{b}\hat{n}_{bz}\triangle A_{b}+p_{c}\hat{n}_{cz}\triangle A_{c}+p_{n}\hat{n}_{nz}\triangle A_{n}+p_{o}\hat{n}_{oz}\triangle A_{o}+p_{p}\hat{n}_{pz}\triangle A_{p}$
+\end_inset
+
+
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $ZDFLUX_{d}=\left\{ \begin{array}{c}
+\left(\left(\frac{\partial w}{\partial x}\right)_{a}\hat{n}_{ax}+\left(\frac{\partial w}{\partial y}\right)_{a}\hat{n}_{ay}+\left(\frac{\partial w}{\partial z}\right)_{a}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{b}\hat{n}_{bx}+\left(\frac{\partial w}{\partial y}\right)_{b}\hat{n}_{by}+\left(\frac{\partial w}{\partial z}\right)_{b}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{c}\hat{n}_{cx}+\left(\frac{\partial w}{\partial y}\right)_{c}\hat{n}_{cy}+\left(\frac{\partial w}{\partial z}\right)_{c}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{n}\hat{n}_{nx}+\left(\frac{\partial w}{\partial y}\right)_{n}\hat{n}_{ny}+\left(\frac{\partial w}{\partial z}\right)_{n}\hat{n}_{nz}\right)\triangle A_{n}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{o}\hat{n}_{ox}+\left(\frac{\partial w}{\partial y}\right)_{o}\hat{n}_{oy}+\left(\frac{\partial w}{\partial z}\right)_{o}\hat{n}_{oz}\right)\triangle A_{o}+\\
+\left(\left(\frac{\partial w}{\partial x}\right)_{p}\hat{n}_{px}+\left(\frac{\partial w}{\partial y}\right)_{p}\hat{n}_{py}+\left(\frac{\partial w}{\partial z}\right)_{p}\hat{n}_{pz}\right)\triangle A_{p}
+\end{array}\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\triangle A_{a}$
+\end_inset
+
+ represents the area of the face 'A'
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\hat{n}_{ax}i+\hat{n}_{ay}j+\hat{n}_{az}j$
+\end_inset
+
+ represents the outward unit normal vector for face 'A'
+\begin_inset VSpace 1.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pressure Poisson Equation
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $D^{n+1}=0=\left\{ \begin{array}{c}
+\left(u_{a}^{n+1}\hat{n}_{ax}+v_{a}^{n+1}\hat{n}_{ay}+w_{a}^{n+1}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{b}^{n+1}\hat{n}_{bx}+v_{b}^{n+1}\hat{n}_{by}+w_{b}^{n+1}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{c}^{n+1}\hat{n}_{cx}+v_{c}^{n+1}\hat{n}_{cy}+w_{c}^{n+1}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{d}^{n+1}\hat{n}_{dx}+v_{d}^{n+1}\hat{n}_{dy}+w_{d}^{n+1}\hat{n}_{dz}\right)\triangle A_{d}
+\end{array}\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $\Rightarrow0=\left\{ \begin{array}{c}
+\left\{ \begin{array}{c}
+\left(\left(u_{a}^{n}+\frac{\triangle t}{\triangle\Omega_{a}}\left[-XCFLUX_{a}-XPFLUX_{a}+\nicefrac{1}{Re}XDFLUX_{a}\right]\right)\hat{n}_{ax}\right)+\\
+\left(\left(v_{a}^{n}+\frac{\triangle t}{\triangle\Omega_{a}}\left[-YCFLUX_{a}-YPFLUX_{a}+\nicefrac{1}{Re}YDFLUX_{a}\right]\right)\hat{n}_{ay}\right)+\\
+\left(\left(w_{a}^{n}+\frac{\triangle t}{\triangle\Omega_{a}}\left[-ZCFLUX_{a}-ZPFLUX_{a}+\nicefrac{1}{Re}ZDFLUX_{a}\right]\right)\hat{n}_{az}\right)
+\end{array}\right\} \triangle A_{a}+\\
+\left\{ \begin{array}{c}
+\left(\left(u_{b}^{n}+\frac{\triangle t}{\triangle\Omega_{b}}\left[-XCFLUX_{b}-XPFLUX_{b}+\nicefrac{1}{Re}XDFLUX_{b}\right]\right)\hat{n}_{bx}\right)+\\
+\left(\left(v_{b}^{n}+\frac{\triangle t}{\triangle\Omega_{b}}\left[-YCFLUX_{b}-YPFLUX_{b}+\nicefrac{1}{Re}YDFLUX_{b}\right]\right)\hat{n}_{by}\right)+\\
+\left(\left(w_{b}^{n}+\frac{\triangle t}{\triangle\Omega_{b}}\left[-ZCFLUX_{b}-ZPFLUX_{b}+\nicefrac{1}{Re}ZDFLUX_{b}\right]\right)\hat{n}_{bz}\right)
+\end{array}\right\} \triangle A_{b}+\\
+\left\{ \begin{array}{c}
+\left(\left(u_{c}^{n}+\frac{\triangle t}{\triangle\Omega_{c}}\left[-XCFLUX_{c}-XPFLUX_{c}+\nicefrac{1}{Re}XDFLUX_{c}\right]\right)\hat{n}_{cx}\right)+\\
+\left(\left(v_{c}^{n}+\frac{\triangle t}{\triangle\Omega_{c}}\left[-YCFLUX_{c}-YPFLUX_{c}+\nicefrac{1}{Re}YDFLUX_{c}\right]\right)\hat{n}_{cy}\right)+\\
+\left(\left(w_{c}^{n}+\frac{\triangle t}{\triangle\Omega_{c}}\left[-ZCFLUX_{c}-ZPFLUX_{c}+\nicefrac{1}{Re}ZDFLUX_{c}\right]\right)\hat{n}_{cz}\right)
+\end{array}\right\} \triangle A_{c}+\\
+\left\{ \begin{array}{c}
+\left(\left(u_{d}^{n}+\frac{\triangle t}{\triangle\Omega_{d}}\left[-XCFLUX_{d}-XPFLUX_{d}+\nicefrac{1}{Re}XDFLUX_{d}\right]\right)\hat{n}_{dx}\right)+\\
+\left(\left(v_{d}^{n}+\frac{\triangle t}{\triangle\Omega_{d}}\left[-YCFLUX_{d}-YPFLUX_{d}+\nicefrac{1}{Re}YDFLUX_{d}\right]\right)\hat{n}_{dy}\right)+\\
+\left(\left(w_{d}^{n}+\frac{\triangle t}{\triangle\Omega_{d}}\left[-ZCFLUX_{d}-ZPFLUX_{d}+\nicefrac{1}{Re}ZDFLUX_{d}\right]\right)\hat{n}_{dz}\right)
+\end{array}\right\} \triangle A_{d}
+\end{array}\right.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Source=\left\{ \begin{array}{c}
+\left(u_{a}^{n}\star\hat{n}_{ax}+v_{a}^{n}\star\hat{n}_{ay}+w_{a}^{n}\star\hat{n}_{az}\right)\star\frac{\triangle A_{a}}{\triangle t}+\\
+\left(u_{b}^{n}\star\hat{n}_{bx}+v_{b}^{n}\star\hat{n}_{by}+w_{b}^{n}\star\hat{n}_{bz}\right)\star\frac{\triangle A_{b}}{\triangle t}+\\
+\left(u_{c}^{n}\star\hat{n}_{cx}+v_{c}^{n}\star\hat{n}_{cy}+w_{c}^{n}\star\hat{n}_{cz}\right)\star\frac{\triangle A_{c}}{\triangle t}+\\
+\left(u_{d}^{n}\star\hat{n}_{dx}+v_{d}^{n}\star\hat{n}_{dy}+w_{d}^{n}\star\hat{n}_{dz}\right)\star\frac{\triangle A_{d}}{\triangle t}+\\
+\left\{ \begin{array}{c}
+\left(\left(\frac{1}{\triangle\Omega_{a}}\left[-XCFLUX_{a}+\nicefrac{1}{Re}XDFLUX_{a}\right]\right)\hat{n}_{ax}\right)+\\
+\left(\left(\frac{1}{\triangle\Omega_{a}}\left[-YCFLUX_{a}+\nicefrac{1}{Re}YDFLUX_{a}\right]\right)\hat{n}_{ay}\right)+\\
+\left(\left(\frac{1}{\triangle\Omega_{a}}\left[-ZCFLUX_{a}+\nicefrac{1}{Re}ZDFLUX_{a}\right]\right)\hat{n}_{az}\right)
+\end{array}\right\} \triangle A_{a}+\\
+\left\{ \begin{array}{c}
+\left(\left(\frac{1}{\triangle\Omega_{b}}\left[-XCFLUX_{b}+\nicefrac{1}{Re}XDFLUX_{b}\right]\right)\hat{n}_{bx}\right)+\\
+\left(\left(\frac{1}{\triangle\Omega_{b}}\left[-YCFLUX_{b}+\nicefrac{1}{Re}YDFLUX_{b}\right]\right)\hat{n}_{by}\right)+\\
+\left(\left(\frac{1}{\triangle\Omega_{b}}\left[-ZCFLUX_{b}+\nicefrac{1}{Re}ZDFLUX_{b}\right]\right)\hat{n}_{bz}\right)
+\end{array}\right\} \triangle A_{b}+\\
+\left\{ \begin{array}{c}
+\left(\left(\frac{1}{\triangle\Omega_{c}}\left[-XCFLUX_{c}+\nicefrac{1}{Re}XDFLUX_{c}\right]\right)\hat{n}_{cx}\right)+\\
+\left(\left(\frac{1}{\triangle\Omega_{c}}\left[-YCFLUX_{c}+\nicefrac{1}{Re}YDFLUX_{c}\right]\right)\hat{n}_{cy}\right)+\\
+\left(\left(\frac{1}{\triangle\Omega_{c}}\left[-ZCFLUX_{c}+\nicefrac{1}{Re}ZDFLUX_{c}\right]\right)\hat{n}_{cz}\right)
+\end{array}\right\} \triangle A_{c}+\\
+\left\{ \begin{array}{c}
+\left(\left(\frac{1}{\triangle\Omega_{d}}\left[-XCFLUX_{d}+\nicefrac{1}{Re}XDFLUX_{d}\right]\right)\hat{n}_{dx}\right)+\\
+\left(\left(\frac{1}{\triangle\Omega_{d}}\left[-YCFLUX_{d}+\nicefrac{1}{Re}YDFLUX_{d}\right]\right)\hat{n}_{dy}\right)+\\
+\left(\left(\frac{1}{\triangle\Omega_{d}}\left[-ZCFLUX_{d}+\nicefrac{1}{Re}ZDFLUX_{d}\right]\right)\hat{n}_{dz}\right)
+\end{array}\right\} \triangle A_{d}
+\end{array}\right\} $
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Source=\left\{ \begin{array}{c}
+\left(XPFLUX_{a}\star\hat{n}_{ax}+YPFLUX_{a}\star\hat{n}_{ay}+ZPFLUX_{a}\star\hat{n}_{az}\right)\frac{\triangle A_{a}}{\Omega_{a}}+\\
+\left(XPFLUX_{b}\star\hat{n}_{bx}+YPFLUX_{b}\star\hat{n}_{by}+ZPFLUX_{b}\star\hat{n}_{bz}\right)\frac{\triangle A_{b}}{\Omega_{b}}+\\
+\left(XPFLUX_{c}\star\hat{n}_{cx}+YPFLUX_{c}\star\hat{n}_{cy}+ZPFLUX_{c}\star\hat{n}_{cz}\right)\frac{\triangle A_{c}}{\Omega_{c}}+\\
+\left(XPFLUX_{d}\star\hat{n}_{dx}+YPFLUX_{d}\star\hat{n}_{dy}+ZPFLUX_{d}\star\hat{n}_{dz}\right)\frac{\triangle A_{d}}{\Omega_{d}}
+\end{array}\right\} $
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Source=\left\{ \begin{array}{c}
+\left(\begin{array}{c}
+\left(p_{b}\hat{n}_{bx}\triangle A_{b}+p_{c}\hat{n}_{cx}\triangle A_{c}+p_{d}\hat{n}_{dx}\triangle A_{d}+p_{e}\hat{n}_{ex}\triangle A_{e}+p_{f}\hat{n}_{fx}\triangle A_{f}+p_{g}\hat{n}_{gx}\triangle A_{g}\right)\hat{n}_{ax}+\\
+\left(p_{b}\hat{n}_{by}\triangle A_{b}+p_{c}\hat{n}_{cy}\triangle A_{c}+p_{d}\hat{n}_{dy}\triangle A_{d}+p_{e}\hat{n}_{ey}\triangle A_{e}+p_{f}\hat{n}_{fy}\triangle A_{f}+p_{g}\hat{n}_{gy}\triangle A_{g}\right)\hat{n}_{ay}+\\
+\left(p_{b}\hat{n}_{bz}\triangle A_{b}+p_{c}\hat{n}_{cz}\triangle A_{c}+p_{d}\hat{n}_{dz}\triangle A_{d}+p_{e}\hat{n}_{ez}\triangle A_{e}+p_{f}\hat{n}_{fz}\triangle A_{f}+p_{g}\hat{n}_{gz}\triangle A_{g}\right)\hat{n}_{az}
+\end{array}\right)\frac{\triangle A_{a}}{\Omega_{a}}+\\
+\left(\begin{array}{c}
+\left(p_{a}\hat{n}_{ax}\triangle A_{a}+p_{c}\hat{n}_{cx}\triangle A_{c}+p_{d}\hat{n}_{dx}\triangle A_{d}+p_{h}\hat{n}_{hx}\triangle A_{h}+p_{i}\hat{n}_{ix}\triangle A_{i}+p_{j}\hat{n}_{jx}\triangle A_{j}\right)\hat{n}_{bx}+\\
+\left(p_{a}\hat{n}_{ay}\triangle A_{a}+p_{c}\hat{n}_{cy}\triangle A_{c}+p_{d}\hat{n}_{dy}\triangle A_{d}+p_{h}\hat{n}_{hy}\triangle A_{h}+p_{i}\hat{n}_{iy}\triangle A_{i}+p_{j}\hat{n}_{jy}\triangle A_{j}\right)\hat{n}_{by}+\\
+\left(p_{a}\hat{n}_{az}\triangle A_{a}+p_{c}\hat{n}_{cz}\triangle A_{c}+p_{d}\hat{n}_{dz}\triangle A_{d}+p_{h}\hat{n}_{hz}\triangle A_{h}+p_{i}\hat{n}_{iz}\triangle A_{i}+p_{j}\hat{n}_{jz}\triangle A_{j}\right)\hat{n}_{bz}
+\end{array}\right)\frac{\triangle A_{b}}{\Omega_{b}}+\\
+\left(\begin{array}{c}
+\left(p_{a}\hat{n}_{ax}\triangle A_{a}+p_{b}\hat{n}_{bx}\triangle A_{b}+p_{d}\hat{n}_{dx}\triangle A_{d}+p_{k}\hat{n}_{kx}\triangle A_{k}+p_{l}\hat{n}_{lx}\triangle A_{l}+p_{m}\hat{n}_{mx}\triangle A_{m}\right)\hat{n}_{cx}\\
+\left(p_{a}\hat{n}_{ay}\triangle A_{a}+p_{b}\hat{n}_{by}\triangle A_{b}+p_{d}\hat{n}_{dy}\triangle A_{d}+p_{k}\hat{n}_{ky}\triangle A_{k}+p_{l}\hat{n}_{ly}\triangle A_{l}+p_{m}\hat{n}_{my}\triangle A_{m}\right)\hat{n}_{cy}+\\
+\left(p_{a}\hat{n}_{az}\triangle A_{a}+p_{b}\hat{n}_{bz}\triangle A_{b}+p_{d}\hat{n}_{dz}\triangle A_{d}+p_{k}\hat{n}_{kz}\triangle A_{k}+p_{l}\hat{n}_{lz}\triangle A_{l}+p_{m}\hat{n}_{mz}\triangle A_{m}\right)\hat{n}_{cz}
+\end{array}\right)\frac{\triangle A_{c}}{\Omega_{c}}+\\
+\left(\begin{array}{c}
+\left(p_{a}\hat{n}_{ax}\triangle A_{a}+p_{b}\hat{n}_{bx}\triangle A_{b}+p_{c}\hat{n}_{cx}\triangle A_{c}+p_{n}\hat{n}_{nx}\triangle A_{n}+p_{o}\hat{n}_{ox}\triangle A_{o}+p_{p}\hat{n}_{px}\triangle A_{p}\right)\hat{n}_{dx}\\
+\left(p_{a}\hat{n}_{ay}\triangle A_{a}+p_{b}\hat{n}_{by}\triangle A_{b}+p_{c}\hat{n}_{cy}\triangle A_{c}+p_{n}\hat{n}_{ny}\triangle A_{n}+p_{o}\hat{n}_{oy}\triangle A_{o}+p_{p}\hat{n}_{py}\triangle A_{p}\right)\hat{n}_{dy}+\\
+\left(p_{a}\hat{n}_{az}\triangle A_{a}+p_{b}\hat{n}_{bz}\triangle A_{b}+p_{c}\hat{n}_{cz}\triangle A_{c}+p_{n}\hat{n}_{nz}\triangle A_{n}+p_{o}\hat{n}_{oz}\triangle A_{o}+p_{p}\hat{n}_{pz}\triangle A_{p}\right)\hat{n}_{dz}
+\end{array}\right)\frac{\triangle A_{d}}{\Omega_{d}}
+\end{array}\right\} $
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left\{ \begin{array}{c}
+p_{a}\left\{ \begin{array}{c}
+\left(\hat{n}_{ax}\hat{n}_{bx}+\hat{n}_{ay}\hat{n}_{by}+\hat{n}_{az}\hat{n}_{bz}\right)\frac{\triangle A_{a}\triangle A_{b}}{\Omega_{b}}+\\
+\left(\hat{n}_{ax}\hat{n}_{cx}+\hat{n}_{ay}\hat{n}_{cy}+\hat{n}_{az}\hat{n}_{cz}\right)\frac{\triangle A_{a}\triangle A_{c}}{\Omega_{c}}+\\
+\left(\hat{n}_{ax}\hat{n}_{dx}+\hat{n}_{ay}\hat{n}_{dy}+\hat{n}_{az}\hat{n}_{dz}\right)\frac{\triangle A_{a}\triangle A_{d}}{\Omega_{d}}
+\end{array}\right\} +\\
+p_{b}\left\{ \begin{array}{c}
+\left(\hat{n}_{ax}\hat{n}_{bx}+\hat{n}_{ay}\hat{n}_{by}+\hat{n}_{az}\hat{n}_{bz}\right)\frac{\triangle A_{a}\triangle A_{b}}{\Omega_{a}}+\\
+\left(\hat{n}_{cx}\hat{n}_{bx}+\hat{n}_{cy}\hat{n}_{by}+\hat{n}_{cz}\hat{n}_{bz}\right)\frac{\triangle A_{c}\triangle A_{b}}{\Omega_{c}}+\\
+\left(\hat{n}_{dx}\hat{n}_{bx}+\hat{n}_{dy}\hat{n}_{by}+\hat{n}_{dz}\hat{n}_{bz}\right)\frac{\triangle A_{d}\triangle A_{b}}{\Omega_{d}}
+\end{array}\right\} +\\
+p_{c}\left\{ \begin{array}{c}
+\left(\hat{n}_{ax}\hat{n}_{cx}+\hat{n}_{ay}\hat{n}_{cy}+\hat{n}_{az}\hat{n}_{cz}\right)\frac{\triangle A_{a}\triangle A_{c}}{\Omega_{a}}+\\
+\left(\hat{n}_{bx}\hat{n}_{cx}+\hat{n}_{by}\hat{n}_{cy}+\hat{n}_{bz}\hat{n}_{cz}\right)\frac{\triangle A_{b}\triangle A_{c}}{\Omega_{b}}+\\
+\left(\hat{n}_{dx}\hat{n}_{cx}+\hat{n}_{dy}\hat{n}_{cy}+\hat{n}_{dz}\hat{n}_{cz}\right)\frac{\triangle A_{d}\triangle A_{c}}{\Omega_{d}}
+\end{array}\right\} +\\
+p_{d}\left\{ \begin{array}{c}
+\left(\hat{n}_{ax}\hat{n}_{dx}+\hat{n}_{ay}\hat{n}_{dy}+\hat{n}_{az}\hat{n}_{dz}\right)\frac{\triangle A_{a}\triangle A_{d}}{\Omega_{a}}+\\
+\left(\hat{n}_{bx}\hat{n}_{dx}+\hat{n}_{by}\hat{n}_{dy}+\hat{n}_{bz}\hat{n}_{dz}\right)\frac{\triangle A_{b}\triangle A_{d}}{\Omega_{b}}+\\
+\left(\hat{n}_{cx}\hat{n}_{dx}+\hat{n}_{cy}\hat{n}_{dy}+\hat{n}_{cz}\hat{n}_{dz}\right)\frac{\triangle A_{c}\triangle A_{d}}{\Omega_{c}}
+\end{array}\right\} +\\
+p_{e}\left(\hat{n}_{ax}\hat{n}_{ex}+\hat{n}_{ay}\hat{n}_{ex}+\hat{n}_{az}\hat{n}_{ex}\right)\frac{\triangle A_{a}\triangle A_{e}}{\Omega_{a}}+\\
+p_{f}\left(\hat{n}_{ax}\hat{n}_{fx}+\hat{n}_{ay}\hat{n}_{fx}+\hat{n}_{az}\hat{n}_{fx}\right)\frac{\triangle A_{a}\triangle A_{f}}{\Omega_{a}}+\\
+p_{g}\left(\hat{n}_{ax}\hat{n}_{gx}+\hat{n}_{ay}\hat{n}_{gx}+\hat{n}_{az}\hat{n}_{gx}\right)\frac{\triangle A_{a}\triangle A_{g}}{\Omega_{a}}+\\
+p_{h}\left(\hat{n}_{bx}\hat{n}_{hx}+\hat{n}_{by}\hat{n}_{hx}+\hat{n}_{bz}\hat{n}_{hx}\right)\frac{\triangle A_{b}\triangle A_{h}}{\Omega_{b}}+\\
+p_{i}\left(\hat{n}_{bx}\hat{n}_{ix}+\hat{n}_{by}\hat{n}_{ix}+\hat{n}_{bz}\hat{n}_{ix}\right)\frac{\triangle A_{b}\triangle A_{i}}{\Omega_{b}}+\\
+p_{j}\left(\hat{n}_{bx}\hat{n}_{jx}+\hat{n}_{by}\hat{n}_{jx}+\hat{n}_{bz}\hat{n}_{jx}\right)\frac{\triangle A_{b}\triangle A_{j}}{\Omega_{b}}+\\
+p_{k}\left(\hat{n}_{cx}\hat{n}_{kx}+\hat{n}_{cy}\hat{n}_{kx}+\hat{n}_{cz}\hat{n}_{kx}\right)\frac{\triangle A_{c}\triangle A_{k}}{\Omega_{c}}+\\
+p_{l}\left(\hat{n}_{cx}\hat{n}_{lx}+\hat{n}_{cy}\hat{n}_{lx}+\hat{n}_{cz}\hat{n}_{lx}\right)\frac{\triangle A_{c}\triangle A_{l}}{\Omega_{c}}+\\
+p_{m}\left(\hat{n}_{cx}\hat{n}_{mx}+\hat{n}_{cy}\hat{n}_{mx}+\hat{n}_{cz}\hat{n}_{mx}\right)\frac{\triangle A_{c}\triangle A_{m}}{\Omega_{c}}+\\
+p_{n}\left(\hat{n}_{dx}\hat{n}_{nx}+\hat{n}_{dy}\hat{n}_{nx}+\hat{n}_{dz}\hat{n}_{nx}\right)\frac{\triangle A_{d}\triangle A_{n}}{\Omega_{d}}+\\
+p_{o}\left(\hat{n}_{dx}\hat{n}_{ox}+\hat{n}_{dy}\hat{n}_{ox}+\hat{n}_{dz}\hat{n}_{ox}\right)\frac{\triangle A_{d}\triangle A_{o}}{\Omega_{d}}+\\
+p_{p}\left(\hat{n}_{dx}\hat{n}_{px}+\hat{n}_{dy}\hat{n}_{px}+\hat{n}_{dz}\hat{n}_{px}\right)\frac{\triangle A_{d}\triangle A_{p}}{\Omega_{d}}
+\end{array}\right\} =Source$
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{c}
+GK_{a}=\left\{ \begin{array}{c}
+\left(\hat{n}_{ax}\hat{n}_{bx}+\hat{n}_{ay}\hat{n}_{by}+\hat{n}_{az}\hat{n}_{bz}\right)\frac{\triangle A_{a}\triangle A_{b}}{\Omega_{b}}+\\
+\left(\hat{n}_{ax}\hat{n}_{cx}+\hat{n}_{ay}\hat{n}_{cy}+\hat{n}_{az}\hat{n}_{cz}\right)\frac{\triangle A_{a}\triangle A_{c}}{\Omega_{c}}+\\
+\left(\hat{n}_{ax}\hat{n}_{dx}+\hat{n}_{ay}\hat{n}_{dy}+\hat{n}_{az}\hat{n}_{dz}\right)\frac{\triangle A_{a}\triangle A_{d}}{\Omega_{d}}
+\end{array}\right\} \end{array}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\begin{array}{c}
+GK_{b}=\left\{ \begin{array}{c}
+\left(\hat{n}_{ax}\hat{n}_{bx}+\hat{n}_{ay}\hat{n}_{by}+\hat{n}_{az}\hat{n}_{bz}\right)\frac{\triangle A_{a}\triangle A_{b}}{\Omega_{a}}+\\
+\left(\hat{n}_{cx}\hat{n}_{bx}+\hat{n}_{cy}\hat{n}_{by}+\hat{n}_{cz}\hat{n}_{bz}\right)\frac{\triangle A_{c}\triangle A_{b}}{\Omega_{c}}+\\
+\left(\hat{n}_{dx}\hat{n}_{bx}+\hat{n}_{dy}\hat{n}_{by}+\hat{n}_{dz}\hat{n}_{bz}\right)\frac{\triangle A_{d}\triangle A_{b}}{\Omega_{d}}
+\end{array}\right\} \end{array}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{c}
+GK_{c}=\left\{ \begin{array}{c}
+\left(\hat{n}_{ax}\hat{n}_{cx}+\hat{n}_{ay}\hat{n}_{cy}+\hat{n}_{az}\hat{n}_{cz}\right)\frac{\triangle A_{a}\triangle A_{c}}{\Omega_{a}}+\\
+\left(\hat{n}_{bx}\hat{n}_{cx}+\hat{n}_{by}\hat{n}_{cy}+\hat{n}_{bz}\hat{n}_{cz}\right)\frac{\triangle A_{b}\triangle A_{c}}{\Omega_{b}}+\\
+\left(\hat{n}_{dx}\hat{n}_{cx}+\hat{n}_{dy}\hat{n}_{cy}+\hat{n}_{dz}\hat{n}_{cz}\right)\frac{\triangle A_{d}\triangle A_{c}}{\Omega_{d}}
+\end{array}\right\} \end{array}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{c}
+GK_{d}=\left\{ \begin{array}{c}
+\left(\hat{n}_{ax}\hat{n}_{dx}+\hat{n}_{ay}\hat{n}_{dy}+\hat{n}_{az}\hat{n}_{dz}\right)\frac{\triangle A_{a}\triangle A_{d}}{\Omega_{a}}+\\
+\left(\hat{n}_{bx}\hat{n}_{dx}+\hat{n}_{by}\hat{n}_{dy}+\hat{n}_{bz}\hat{n}_{dz}\right)\frac{\triangle A_{b}\triangle A_{d}}{\Omega_{b}}+\\
+\left(\hat{n}_{cx}\hat{n}_{dx}+\hat{n}_{cy}\hat{n}_{dy}+\hat{n}_{cz}\hat{n}_{dz}\right)\frac{\triangle A_{c}\triangle A_{d}}{\Omega_{c}}
+\end{array}\right\} \end{array}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{array}{c}
+GK_{e}=\left(\hat{n}_{ax}\hat{n}_{ex}+\hat{n}_{ay}\hat{n}_{ex}+\hat{n}_{az}\hat{n}_{ex}\right)\frac{\triangle A_{a}\triangle A_{e}}{\Omega_{a}}\end{array}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{f}=\left(\hat{n}_{ax}\hat{n}_{fx}+\hat{n}_{ay}\hat{n}_{fx}+\hat{n}_{az}\hat{n}_{fx}\right)\frac{\triangle A_{a}\triangle A_{f}}{\Omega_{a}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{g}=\left(\hat{n}_{ax}\hat{n}_{gx}+\hat{n}_{ay}\hat{n}_{gx}+\hat{n}_{az}\hat{n}_{gx}\right)\frac{\triangle A_{a}\triangle A_{g}}{\Omega_{a}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{h}=\left(\hat{n}_{bx}\hat{n}_{hx}+\hat{n}_{by}\hat{n}_{hx}+\hat{n}_{bz}\hat{n}_{hx}\right)\frac{\triangle A_{b}\triangle A_{h}}{\Omega_{b}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{i}=\left(\hat{n}_{bx}\hat{n}_{ix}+\hat{n}_{by}\hat{n}_{ix}+\hat{n}_{bz}\hat{n}_{ix}\right)\frac{\triangle A_{b}\triangle A_{i}}{\Omega_{b}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{j}=\left(\hat{n}_{bx}\hat{n}_{jx}+\hat{n}_{by}\hat{n}_{jx}+\hat{n}_{bz}\hat{n}_{jx}\right)\frac{\triangle A_{b}\triangle A_{j}}{\Omega_{b}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{k}=\left(\hat{n}_{cx}\hat{n}_{kx}+\hat{n}_{cy}\hat{n}_{kx}+\hat{n}_{cz}\hat{n}_{kx}\right)\frac{\triangle A_{c}\triangle A_{k}}{\Omega_{c}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{l}=\left(\hat{n}_{cx}\hat{n}_{lx}+\hat{n}_{cy}\hat{n}_{lx}+\hat{n}_{cz}\hat{n}_{lx}\right)\frac{\triangle A_{c}\triangle A_{l}}{\Omega_{c}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{m}=\left(\hat{n}_{cx}\hat{n}_{mx}+\hat{n}_{cy}\hat{n}_{mx}+\hat{n}_{cz}\hat{n}_{mx}\right)\frac{\triangle A_{c}\triangle A_{m}}{\Omega_{c}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{n}=\left(\hat{n}_{dx}\hat{n}_{nx}+\hat{n}_{dy}\hat{n}_{nx}+\hat{n}_{dz}\hat{n}_{nx}\right)\frac{\triangle A_{d}\triangle A_{n}}{\Omega_{d}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{o}=\left(\hat{n}_{dx}\hat{n}_{ox}+\hat{n}_{dy}\hat{n}_{ox}+\hat{n}_{dz}\hat{n}_{ox}\right)\frac{\triangle A_{d}\triangle A_{o}}{\Omega_{d}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $GK_{p}=\left(\hat{n}_{dx}\hat{n}_{px}+\hat{n}_{dy}\hat{n}_{px}+\hat{n}_{dz}\hat{n}_{px}\right)\frac{\triangle A_{d}\triangle A_{p}}{\Omega_{d}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Source=\left\{ \begin{array}{c}
+p_{a}\star GK_{a}+p_{b}\star GK_{b}+p_{c}\star GK_{c}+p_{d}\star GK_{d}+\\
+p_{e}\star GK_{e}+p_{f}\star GK_{f}+p_{g}\star GK_{g}+p_{h}\star GK_{h}+\\
+p_{i}\star GK_{i}+p_{j}\star GK_{j}+p_{k}\star GK_{k}+p_{l}\star GK_{l}+\\
+p_{m}\star GK_{m}+p_{n}\star GK_{n}+p_{o}\star GK_{o}+p_{p}\star GK_{p}
+\end{array}\right\} $
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Source=\left\{ \begin{array}{c}
+\frac{p_{P}\Omega_{A}+p_{A}\Omega_{P}}{\Omega_{A}+\Omega_{P}}\star GK_{a}+\frac{p_{P}\Omega_{B}+p_{B}\Omega_{P}}{\Omega_{B}+\Omega_{P}}\star GK_{b}+\\
+\frac{p_{P}\Omega_{C}+p_{C}\Omega_{P}}{\Omega_{C}+\Omega_{P}}\star GK_{c}+\frac{p_{P}\Omega_{D}+p_{D}\Omega_{P}}{\Omega_{D}+\Omega_{P}}\star GK_{d}+\\
+\frac{p_{E}\Omega_{A}+p_{A}\Omega_{E}}{\Omega_{A}+\Omega_{E}}\star GK_{e}+\frac{p_{F}\Omega_{A}+p_{A}\Omega_{F}}{\Omega_{A}+\Omega_{F}}\star GK_{f}+\\
+\frac{p_{G}\Omega_{A}+p_{A}\Omega_{G}}{\Omega_{A}+\Omega_{G}}\star GK_{g}+\frac{p_{H}\Omega_{B}+p_{B}\Omega_{H}}{\Omega_{B}+\Omega_{H}}\star GK_{h}+\\
+\frac{p_{I}\Omega_{B}+p_{B}\Omega_{I}}{\Omega_{B}+\Omega_{I}}\star GK_{i}+\frac{p_{J}\Omega_{B}+p_{B}\Omega_{J}}{\Omega_{B}+\Omega_{J}}\star GK_{j}+\\
+\frac{p_{K}\Omega_{C}+p_{C}\Omega_{K}}{\Omega_{C}+\Omega_{K}}\star GK_{k}+\frac{p_{L}\Omega_{C}+p_{C}\Omega_{L}}{\Omega_{C}+\Omega_{L}}\star GK_{l}+\\
+\frac{p_{M}\Omega_{C}+p_{C}\Omega_{M}}{\Omega_{C}+\Omega_{M}}\star GK_{m}+\frac{p_{N}\Omega_{D}+p_{D}\Omega_{N}}{\Omega_{D}+\Omega_{N}}\star GK_{n}+\\
+\frac{p_{O}\Omega_{D}+p_{D}\Omega_{O}}{\Omega_{D}+\Omega_{O}}\star GK_{o}+\frac{p_{Q}\Omega_{D}+p_{D}\Omega_{Q}}{\Omega_{D}+\Omega_{Q}}\star GK_{p}
+\end{array}\right\} $
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Source=\left\{ \begin{array}{c}
+p_{P}\left(\frac{\Omega_{A}GK_{a}}{\Omega_{A}+\Omega_{P}}+\frac{\Omega_{B}GK_{b}}{\Omega_{B}+\Omega_{P}}+\frac{\Omega_{C}GK_{c}}{\Omega_{C}+\Omega_{P}}+\frac{\Omega_{D}GK_{d}}{\Omega_{D}+\Omega_{P}}\right)+\\
+p_{A}\left(\frac{\Omega_{P}GK_{a}}{\Omega_{A}+\Omega_{P}}+\frac{\Omega_{E}GK_{e}}{\Omega_{A}+\Omega_{E}}+\frac{\Omega_{F}GK_{f}}{\Omega_{A}+\Omega_{F}}+\frac{\Omega_{G}GK_{g}}{\Omega_{A}+\Omega_{G}}\right)+\\
+p_{B}\left(\frac{\Omega_{P}GK_{b}}{\Omega_{B}+\Omega_{P}}+\frac{\Omega_{H}GK_{h}}{\Omega_{B}+\Omega_{H}}+\frac{\Omega_{I}GK_{i}}{\Omega_{B}+\Omega_{I}}+\frac{\Omega_{J}GK_{j}}{\Omega_{B}+\Omega_{J}}\right)+\\
+p_{C}\left(\frac{\Omega_{P}GK_{c}}{\Omega_{C}+\Omega_{P}}+\frac{\Omega_{K}GK_{k}}{\Omega_{C}+\Omega_{K}}+\frac{\Omega_{L}GK_{l}}{\Omega_{C}+\Omega_{L}}+\frac{\Omega_{M}GK_{m}}{\Omega_{C}+\Omega_{M}}\right)+\\
+p_{D}\left(\frac{\Omega_{P}GK_{d}}{\Omega_{D}+\Omega_{P}}+\frac{\Omega_{N}GK_{n}}{\Omega_{D}+\Omega_{N}}+\frac{\Omega_{O}GK_{o}}{\Omega_{D}+\Omega_{O}}+\frac{\Omega_{Q}GK_{p}}{\Omega_{D}+\Omega_{Q}}\right)+\\
+p_{E}\left(\frac{\Omega_{A}GK_{e}}{\Omega_{A}+\Omega_{E}}\right)+p_{F}\left(\frac{\Omega_{A}GK_{f}}{\Omega_{A}+\Omega_{F}}\right)+p_{G}\left(\frac{\Omega_{A}GK_{g}}{\Omega_{A}+\Omega_{G}}\right)+\\
+p_{H}\left(\frac{\Omega_{B}GK_{h}}{\Omega_{B}+\Omega_{H}}\right)+p_{I}\left(\frac{\Omega_{B}GK_{i}}{\Omega_{B}+\Omega_{I}}\right)+p_{J}\left(\frac{\Omega_{B}GK_{j}}{\Omega_{B}+\Omega_{J}}\right)+\\
+p_{K}\left(\frac{\Omega_{C}GK_{k}}{\Omega_{C}+\Omega_{K}}\right)+p_{L}\left(\frac{\Omega_{C}GK_{l}}{\Omega_{C}+\Omega_{L}}\right)+p_{M}\left(\frac{\Omega_{C}GK_{m}}{\Omega_{C}+\Omega_{M}}\right)+\\
+p_{N}\left(\frac{\Omega_{D}GK_{n}}{\Omega_{D}+\Omega_{N}}\right)+p_{O}\left(\frac{\Omega_{D}GK_{o}}{\Omega_{D}+\Omega_{O}}\right)+p_{Q}\left(\frac{\Omega_{D}GK_{p}}{\Omega_{D}+\Omega_{Q}}\right)
+\end{array}\right\} $
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{P}=\frac{\Omega_{A}GK_{a}}{\Omega_{A}+\Omega_{P}}+\frac{\Omega_{B}GK_{b}}{\Omega_{B}+\Omega_{P}}+\frac{\Omega_{C}GK_{c}}{\Omega_{C}+\Omega_{P}}+\frac{\Omega_{D}GK_{d}}{\Omega_{D}+\Omega_{P}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{A}=\frac{\Omega_{P}GK_{a}}{\Omega_{A}+\Omega_{P}}+\frac{\Omega_{E}GK_{e}}{\Omega_{A}+\Omega_{E}}+\frac{\Omega_{F}GK_{f}}{\Omega_{A}+\Omega_{F}}+\frac{\Omega_{G}GK_{g}}{\Omega_{A}+\Omega_{G}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{B}=\frac{\Omega_{P}GK_{b}}{\Omega_{B}+\Omega_{P}}+\frac{\Omega_{H}GK_{h}}{\Omega_{B}+\Omega_{H}}+\frac{\Omega_{I}GK_{i}}{\Omega_{B}+\Omega_{I}}+\frac{\Omega_{J}GK_{j}}{\Omega_{B}+\Omega_{J}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{C}=\frac{\Omega_{P}GK_{c}}{\Omega_{C}+\Omega_{P}}+\frac{\Omega_{K}GK_{k}}{\Omega_{C}+\Omega_{K}}+\frac{\Omega_{L}GK_{l}}{\Omega_{C}+\Omega_{L}}+\frac{\Omega_{M}GK_{m}}{\Omega_{C}+\Omega_{M}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{D}=\frac{\Omega_{P}GK_{d}}{\Omega_{D}+\Omega_{P}}+\frac{\Omega_{N}GK_{n}}{\Omega_{D}+\Omega_{N}}+\frac{\Omega_{O}GK_{o}}{\Omega_{D}+\Omega_{O}}+\frac{\Omega_{Q}GK_{p}}{\Omega_{D}+\Omega_{Q}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{E}=\frac{\Omega_{A}GK_{e}}{\Omega_{A}+\Omega_{E}}$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $K_{F}=\frac{\Omega_{A}GK_{f}}{\Omega_{A}+\Omega_{F}}$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $K_{G}=\frac{\Omega_{A}GK_{g}}{\Omega_{A}+\Omega_{G}}$
+\end_inset
+
+ 
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{H}=\frac{\Omega_{B}GK_{h}}{\Omega_{B}+\Omega_{H}}$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $K_{I}=\frac{\Omega_{B}GK_{i}}{\Omega_{B}+\Omega_{I}}$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $K_{J}=\frac{\Omega_{B}GK_{j}}{\Omega_{B}+\Omega_{J}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{K}=\frac{\Omega_{C}GK_{k}}{\Omega_{C}+\Omega_{K}}$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $K_{L}=\frac{\Omega_{C}GK_{l}}{\Omega_{C}+\Omega_{L}}$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $K_{M}=\frac{\Omega_{C}GK_{m}}{\Omega_{C}+\Omega_{M}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{N}=\frac{\Omega_{D}GK_{n}}{\Omega_{D}+\Omega_{N}}$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $K_{O}=\frac{\Omega_{D}GK_{o}}{\Omega_{D}+\Omega_{O}}$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $K_{Q}=\frac{\Omega_{D}GK_{p}}{\Omega_{D}+\Omega_{Q}}$
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Source=\left\{ \begin{array}{c}
+P_{P}K_{P}+P_{A}K_{A}+P_{B}K_{B}+P_{C}K_{C}+P_{D}K_{D}+\\
+P_{E}K_{E}+P_{F}K_{F}+P_{G}K_{G}+P_{H}K_{H}+P_{I}K_{I}+\\
+P_{J}K_{J}+P_{K}K_{K}+P_{L}K_{L}+P_{M}K_{M}+P_{N}K_{N}+\\
+P_{O}K_{O}+P_{Q}K_{Q}
+\end{array}\right\} $
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{P}=\frac{Source-\left\{ \begin{array}{c}
+P_{A}K_{A}+P_{B}K_{B}+P_{C}K_{C}+P_{D}K_{D}+\\
+P_{E}K_{E}+P_{F}K_{F}+P_{G}K_{G}+P_{H}K_{H}+P_{I}K_{I}+\\
+P_{J}K_{J}+P_{K}K_{K}+P_{L}K_{L}+P_{M}K_{M}+P_{N}K_{N}+\\
+P_{O}K_{O}+P_{Q}K_{Q}
+\end{array}\right\} }{K_{P}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 10mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pressure Poission Equation if CellA is lying on the Body
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Formula $D^{n+1}=0=\left\{ \begin{array}{c}
+\left(u_{a}^{n+1}\hat{n}_{ax}+v_{a}^{n+1}\hat{n}_{ay}+w_{a}^{n+1}\hat{n}_{az}\right)\triangle A_{a}+\\
+\left(u_{b}^{n+1}\hat{n}_{bx}+v_{b}^{n+1}\hat{n}_{by}+w_{b}^{n+1}\hat{n}_{bz}\right)\triangle A_{b}+\\
+\left(u_{c}^{n+1}\hat{n}_{cx}+v_{c}^{n+1}\hat{n}_{cy}+w_{c}^{n+1}\hat{n}_{cz}\right)\triangle A_{c}+\\
+\left(u_{d}^{n+1}\hat{n}_{dx}+v_{d}^{n+1}\hat{n}_{dy}+w_{d}^{n+1}\hat{n}_{dz}\right)\triangle A_{d}
+\end{array}\right.$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

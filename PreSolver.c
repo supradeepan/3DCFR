@@ -4,8 +4,8 @@
 #include<stdlib.h>
 #include<ctype.h>
 #include<string.h>
-#include<process.h>
-#include<conio.h>
+//#include<process.h>
+//#include<conio.h>
 #include <stdio.h>
 
 
@@ -96,16 +96,14 @@ void PreSolver(int NoOfElements, int NoOfNodes, CELLDETAILS *CC, NODE *Node, int
 	fclose(Fwrite);
 	
     CalculateOutwordNormals(NoOfElements, CC, Node);
-    /*
+    
 	CalculateVolume(NoOfElements, CC, Node);
 	CalculateFaceArea(NoOfElements, CC, Node);
 	FormStencil(NoOfElements, CC, Node);
 	FindKs(NoOfElements, CC);
-	FindLSCoeffienents(NoOfElements, CC, Node);
-	Test(NoOfElements, CC);
+	//FindLSCoeffienents(NoOfElements, CC, Node);
+	//Test(NoOfElements, CC);
 	//PointsOnBody(NoOfNodes, Node);
-
-    */
 }
 
 
@@ -192,6 +190,9 @@ void ReadNeutralFile(char *ElementFileName, int NoOfElements, int NoOfNodes, CEL
 		t = fscanf(FPElem, "%d %d %d %d %d %d %d", &Id, &a, &b, &CD[Elem].Connect[0], &CD[Elem].Connect[1], &CD[Elem].Connect[2], &CD[Elem].Connect[3]);
 		
 		
+		
+		
+		
 		if(Node[CD[Elem].Connect[0]-1].ShareCount >= MAXSHAREELEMENT)
 		{
 			printf("Program cannot Proceed...\n Please Increase the \"MAXSHAREELEMENT\" in Main.h");
@@ -249,6 +250,13 @@ void ReadNeutralFile(char *ElementFileName, int NoOfElements, int NoOfNodes, CEL
 		}
 	}
 	printf("\nMax Share count for a node: %d", a);
+
+	if (a>=MAXSHAREELEMENT)
+	{
+		printf("Program cannot Proceed...\n Please Increase the \"MAXSHAREELEMENT\" in Main.h");
+		printf("\nProgram Terminated...");
+		exit(0);
+	}
 
 	t1 = fgets(E_HEADNUT,100, FPElem);
 	//puts(E_HEADNUT);
@@ -311,19 +319,7 @@ void ReadNeutralFile(char *ElementFileName, int NoOfElements, int NoOfNodes, CEL
 			b = CD[ELEM].Connect[1];
 			c = CD[ELEM].Connect[2];
 			d = CD[ELEM].Connect[3];
-			if(IBCODE1 == 3)
-			{
-				if(a==524 || b ==524|| c ==524|| c ==524)
-				{
-					a = a;
-				}
-			}
-			/*
-			if(IBCODE1 != OUTLET)
-				CD[ELEM].Neighbour[FACE-1] = ELEM;
-			else 
-				CD[ELEM].Neighbour[FACE-1] = NEIGHUNAVAILABLE;
-				*/
+			
 			switch(FACE)
 			{
 			case 1:
@@ -872,13 +868,13 @@ void FindNeighbour(int Element, int NoOfElements, CELLDETAILS *CC)
 			if(count == 3)
 			{
 				if(face[0] == 0)
-					CC[Element].Neighbour[CELL_C] = i;
+					CC[Element].Neighbour[CELL_C] = i;  // node a absent → Face 3 (b,c,d)
 				if(face[1] == 0)
-					CC[Element].Neighbour[CELL_D] = i;
+					CC[Element].Neighbour[CELL_D] = i;  // node b absent → Face 4 (a,c,d)
 				if(face[2] == 0)
-					CC[Element].Neighbour[CELL_B] = i;
+					CC[Element].Neighbour[CELL_B] = i;  // node c absent → Face 2 (a,b,d)
 				if(face[3] == 0)
-					CC[Element].Neighbour[CELL_A] = i;
+					CC[Element].Neighbour[CELL_A] = i;  // node d absent → Face 1 (a,b,c)
 				Assigned ++;
 			}
 			count = 0;
@@ -890,20 +886,29 @@ void FindNeighbour(int Element, int NoOfElements, CELLDETAILS *CC)
 
 void CalculateOutwordNormals(int NoOfElements, CELLDETAILS *CC, NODE *Node)
 {
+	printf("\nCompuring Outward Normals for Each Face of Each Tetrahedron...\n");
     for (int i = 0; i < NoOfElements; i++) {
         // Compute the centroid of the tetrahedron
         double centroid[3] = {
-            (Node[CC[i].Connect[0]].x + Node[CC[i].Connect[1]].x + Node[CC[i].Connect[2]].x + Node[CC[i].Connect[3]].x) / 4.0,
-            (Node[CC[i].Connect[0]].y + Node[CC[i].Connect[1]].y + Node[CC[i].Connect[2]].y + Node[CC[i].Connect[3]].y) / 4.0,
-            (Node[CC[i].Connect[0]].z + Node[CC[i].Connect[1]].z + Node[CC[i].Connect[2]].z + Node[CC[i].Connect[3]].z) / 4.0
+            (Node[CC[i].Connect[0]-1].x + Node[CC[i].Connect[1]-1].x + Node[CC[i].Connect[2]-1].x + Node[CC[i].Connect[3]-1].x) / 4.0,
+            (Node[CC[i].Connect[0]-1].y + Node[CC[i].Connect[1]-1].y + Node[CC[i].Connect[2]-1].y + Node[CC[i].Connect[3]-1].y) / 4.0,
+            (Node[CC[i].Connect[0]-1].z + Node[CC[i].Connect[1]-1].z + Node[CC[i].Connect[2]-1].z + Node[CC[i].Connect[3]-1].z) / 4.0
         };
 
         // Loop through each face of the tetrahedron
+        // Face convention (Gambit): Face1(CELL_A)={a,b,c}, Face2(CELL_B)={a,b,d}, Face3(CELL_C)={b,c,d}, Face4(CELL_D)={a,c,d}
+        // Node indices: a=Connect[0], b=Connect[1], c=Connect[2], d=Connect[3]
+        static const int faceNodes[4][3] = {
+            {0, 1, 2},  // CELL_A: Face 1 = a,b,c
+            {0, 1, 3},  // CELL_B: Face 2 = a,b,d
+            {1, 2, 3},  // CELL_C: Face 3 = b,c,d
+            {0, 2, 3}   // CELL_D: Face 4 = a,c,d
+        };
         for (int face = 0; face < MAXFACES; face++) {
             // Get the indices of the three nodes forming the current face
-            int n1 = CC[i].Connect[(face + 1) % MAXNODES];
-            int n2 = CC[i].Connect[(face + 2) % MAXNODES];
-            int n3 = CC[i].Connect[(face + 3) % MAXNODES];
+            int n1 = CC[i].Connect[faceNodes[face][0]]-1;
+            int n2 = CC[i].Connect[faceNodes[face][1]]-1;
+            int n3 = CC[i].Connect[faceNodes[face][2]]-1;
 
             // Compute two edge vectors of the face
             double edge1[3] = {Node[n2].x - Node[n1].x, Node[n2].y - Node[n1].y, Node[n2].z - Node[n1].z};
@@ -933,8 +938,9 @@ void CalculateOutwordNormals(int NoOfElements, CELLDETAILS *CC, NODE *Node)
             // Compute the dot product of the face normal and the faceToCentroid vector
             double dotProduct = normal[Nx] * faceToCentroid[0] + normal[Ny] * faceToCentroid[1] + normal[Nz] * faceToCentroid[2];
 
-            // If the dot product is negative, the normal is pointing inward; reverse it
-            if (dotProduct < 0) {
+            // faceToCentroid points inward (face node → centroid).
+            // If dotProduct > 0, the normal points inward too → flip it to get outward normal.
+            if (dotProduct > 0) {
                 normal[Nx] = -normal[Nx];
                 normal[Ny] = -normal[Ny];
                 normal[Nz] = -normal[Nz];
@@ -946,4 +952,257 @@ void CalculateOutwordNormals(int NoOfElements, CELLDETAILS *CC, NODE *Node)
             CC[i].Normals[face][Nz] = normal[Nz];
         }
     }
+}
+
+
+void CalculateVolume(int NoOfElements, CELLDETAILS *CC, NODE *Node)
+{
+	for (int i = 0; i < NoOfElements; i++) {
+		int n1 = CC[i].Connect[0]-1;
+		int n2 = CC[i].Connect[1]-1;
+		int n3 = CC[i].Connect[2]-1;
+		int n4 = CC[i].Connect[3]-1;
+
+		double x1 = Node[n1].x, y1 = Node[n1].y, z1 = Node[n1].z;
+		double x2 = Node[n2].x, y2 = Node[n2].y, z2 = Node[n2].z;
+		double x3 = Node[n3].x, y3 = Node[n3].y, z3 = Node[n3].z;
+		double x4 = Node[n4].x, y4 = Node[n4].y, z4 = Node[n4].z;
+
+		double ax = x2 - x1, ay = y2 - y1, az = z2 - z1;
+		double bx = x3 - x1, by = y3 - y1, bz = z3 - z1;
+		double cx = x4 - x1, cy = y4 - y1, cz = z4 - z1;
+
+		CC[i].Volume = fabs(
+			ax * (by * cz - bz * cy)
+			- ay * (bx * cz - bz * cx)
+			+ az * (bx * cy - by * cx)
+		) / 6.0;
+	}
+}
+
+void CalculateFaceArea(int NoOfElements, CELLDETAILS *CC, NODE *Node)
+{
+	for (int i = 0; i < NoOfElements; i++) {
+		// Face convention (Gambit): Face1(CELL_A)={a,b,c}, Face2(CELL_B)={a,b,d}, Face3(CELL_C)={b,c,d}, Face4(CELL_D)={a,c,d}
+		// Node indices: a=Connect[0], b=Connect[1], c=Connect[2], d=Connect[3]
+		static const int faceNodes[4][3] = {
+			{0, 1, 2},  // CELL_A: Face 1 = a,b,c
+			{0, 1, 3},  // CELL_B: Face 2 = a,b,d
+			{1, 2, 3},  // CELL_C: Face 3 = b,c,d
+			{0, 2, 3}   // CELL_D: Face 4 = a,c,d
+		};
+		for (int face = 0; face < MAXFACES; face++) {
+			int n1 = CC[i].Connect[faceNodes[face][0]]-1;
+			int n2 = CC[i].Connect[faceNodes[face][1]]-1;
+			int n3 = CC[i].Connect[faceNodes[face][2]]-1;
+
+			
+			double x1 = Node[n1].x, y1 = Node[n1].y, z1 = Node[n1].z;
+			double x2 = Node[n2].x, y2 = Node[n2].y, z2 = Node[n2].z;
+			double x3 = Node[n3].x, y3 = Node[n3].y, z3 = Node[n3].z;
+
+			
+
+			// Compute edge vectors
+			double edge1[3] = {x2 - x1, y2 - y1, z2 - z1};
+			double edge2[3] = {x3 - x1, y3 - y1, z3 - z1};
+
+			// Compute the cross product of the edge vectors
+			double cross[3];
+			cross[Nx] = edge1[Ny] * edge2[Nz] - edge1[Nz] * edge2[Ny];
+			cross[Ny] = edge1[Nz] *	edge2[Nx] - edge1[Nx] * edge2[Nz];
+			cross[Nz] = edge1[Nx] * edge2[Ny] - edge1[Ny] * edge2[Nx];
+
+			// Compute the area of the triangle (half the magnitude of the cross product)
+			double area = 0.5 * sqrt(cross[Nx] * cross[Nx] + cross[Ny] * cross[Ny] + cross[Nz] * cross[Nz]);
+			
+			CC[i].FaceArea[face] = area;	
+		}
+	}
+}
+
+static int FaceContainsNode(const int faceNodes[3], int nodeId)
+{
+	return (faceNodes[0] == nodeId || faceNodes[1] == nodeId || faceNodes[2] == nodeId);
+}
+
+static int FindFaceByEdgeAndExcludedNode(CELLDETAILS *CC, int elem, int edgeNode1, int edgeNode2, int excludedNode)
+{
+	static const int localFaceNodes[4][3] = {
+		{0, 1, 2},
+		{0, 1, 3},
+		{1, 2, 3},
+		{0, 2, 3}
+	};
+
+	for (int face = 0; face < MAXFACES; face++) {
+		int fNodes[3] = {
+			CC[elem].Connect[localFaceNodes[face][0]],
+			CC[elem].Connect[localFaceNodes[face][1]],
+			CC[elem].Connect[localFaceNodes[face][2]]
+		};
+
+		if (FaceContainsNode(fNodes, edgeNode1)
+			&& FaceContainsNode(fNodes, edgeNode2)
+			&& !FaceContainsNode(fNodes, excludedNode))
+		{
+			return face;
+		}
+	}
+
+	return UNAVAILABLEDATA;
+}
+
+void FormStencil(int NoOfElements, CELLDETAILS *CC, NODE *Node)
+{
+	printf("\nForming Stencil for Each Cell...\n");
+
+	for (int i = 0; i < NoOfElements; i++) {
+		CC[i].FaceE = CC[i].FaceF = CC[i].FaceG = UNAVAILABLEDATA;
+		CC[i].FaceH = CC[i].FaceI = CC[i].FaceJ = UNAVAILABLEDATA;
+		CC[i].FaceK = CC[i].FaceL = CC[i].FaceM = UNAVAILABLEDATA;
+		CC[i].FaceN = CC[i].FaceO = CC[i].FaceP = UNAVAILABLEDATA;
+		CC[i].CellE = CC[i].CellF = CC[i].CellG = NEIGHUNAVAILABLE;
+		CC[i].CellH = CC[i].CellI = CC[i].CellJ = NEIGHUNAVAILABLE;
+		CC[i].CellK = CC[i].CellL = CC[i].CellM = NEIGHUNAVAILABLE;
+		CC[i].CellN = CC[i].CellO = CC[i].CellQ = NEIGHUNAVAILABLE;
+
+		/*
+		 * Stencil convention from stecil.png:
+		 * P = (1,2,3,4), A = neighbour across Face A(1,2,3)
+		 * e=(1,2,5), f=(2,3,5), g=(1,3,5)
+		 */
+		int cellA = CC[i].Neighbour[CELL_A];
+		if (cellA >= 0) {
+			int n1 = CC[i].Connect[0];
+			int n2 = CC[i].Connect[1];
+			int n3 = CC[i].Connect[2];
+
+			CC[i].FaceE = FindFaceByEdgeAndExcludedNode(CC, cellA, n1, n2, n3);
+			CC[i].FaceF = FindFaceByEdgeAndExcludedNode(CC, cellA, n2, n3, n1);
+			CC[i].FaceG = FindFaceByEdgeAndExcludedNode(CC, cellA, n1, n3, n2);
+
+			if (CC[i].FaceE >= 0)
+				CC[i].CellE = CC[cellA].Neighbour[CC[i].FaceE];
+			if (CC[i].FaceF >= 0)
+				CC[i].CellF = CC[cellA].Neighbour[CC[i].FaceF];
+			if (CC[i].FaceG >= 0)
+				CC[i].CellG = CC[cellA].Neighbour[CC[i].FaceG];
+		}
+
+		/*
+		 * Stencil convention from stecil.png:
+		 * B = neighbour across Face B(1,2,4)
+		 * h=(1,4,6), i=(2,4,6), j=(1,2,6)
+		 */
+		int cellB = CC[i].Neighbour[CELL_B];
+		if (cellB >= 0) {
+			int n1 = CC[i].Connect[0];
+			int n2 = CC[i].Connect[1];
+			int n4 = CC[i].Connect[3];
+
+			CC[i].FaceH = FindFaceByEdgeAndExcludedNode(CC, cellB, n1, n4, n2);
+			CC[i].FaceI = FindFaceByEdgeAndExcludedNode(CC, cellB, n2, n4, n1);
+			CC[i].FaceJ = FindFaceByEdgeAndExcludedNode(CC, cellB, n1, n2, n4);
+
+			if (CC[i].FaceH >= 0)
+				CC[i].CellH = CC[cellB].Neighbour[CC[i].FaceH];
+			if (CC[i].FaceI >= 0)
+				CC[i].CellI = CC[cellB].Neighbour[CC[i].FaceI];
+			if (CC[i].FaceJ >= 0)
+				CC[i].CellJ = CC[cellB].Neighbour[CC[i].FaceJ];
+		}
+
+		/*
+		 * Stencil convention from stencil.png:
+		 * C = neighbour across Face C(2,3,4)
+		 * k=(2,3,7), l=(2,4,7), m=(3,4,7)
+		 */
+		int cellC = CC[i].Neighbour[CELL_C];
+		if (cellC >= 0) {
+			int n2 = CC[i].Connect[1];
+			int n3 = CC[i].Connect[2];
+			int n4 = CC[i].Connect[3];
+
+			CC[i].FaceK = FindFaceByEdgeAndExcludedNode(CC, cellC, n2, n3, n4);
+			CC[i].FaceL = FindFaceByEdgeAndExcludedNode(CC, cellC, n2, n4, n3);
+			CC[i].FaceM = FindFaceByEdgeAndExcludedNode(CC, cellC, n3, n4, n2);
+
+			if (CC[i].FaceK >= 0)
+				CC[i].CellK = CC[cellC].Neighbour[CC[i].FaceK];
+			if (CC[i].FaceL >= 0)
+				CC[i].CellL = CC[cellC].Neighbour[CC[i].FaceL];
+			if (CC[i].FaceM >= 0)
+				CC[i].CellM = CC[cellC].Neighbour[CC[i].FaceM];
+		}
+
+		/*
+		 * Stencil convention from stencil.png:
+		 * D = neighbour across Face D(1,3,4)
+		 * n=(3,4,8), o=(1,4,8), p=(1,3,8)
+		 */
+		int cellD = CC[i].Neighbour[CELL_D];
+		if (cellD >= 0) {
+			int n1 = CC[i].Connect[0];
+			int n3 = CC[i].Connect[2];
+			int n4 = CC[i].Connect[3];
+
+			CC[i].FaceN = FindFaceByEdgeAndExcludedNode(CC, cellD, n3, n4, n1);
+			CC[i].FaceO = FindFaceByEdgeAndExcludedNode(CC, cellD, n1, n4, n3);
+			CC[i].FaceP = FindFaceByEdgeAndExcludedNode(CC, cellD, n1, n3, n4);
+
+			if (CC[i].FaceN >= 0)
+				CC[i].CellN = CC[cellD].Neighbour[CC[i].FaceN];
+			if (CC[i].FaceO >= 0)
+				CC[i].CellO = CC[cellD].Neighbour[CC[i].FaceO];
+			if (CC[i].FaceP >= 0)
+				CC[i].CellQ = CC[cellD].Neighbour[CC[i].FaceP];
+		}
+	}
+
+}
+
+void FindKs(int NoOfElements, CELLDETAILS *CC)
+{
+	printf("\nFinding stencil Coefficients (Ks) for Each Cell...\n");
+	int Elem;
+	for(Elem=0;Elem<NoOfElements;Elem++)
+	{
+		switch(CC[Elem].Type)
+		{
+		case DOM:
+			
+			break;
+		case TOP:
+		case BOTTOM:
+		case INLET:
+		case OUTLET:
+		case FRONT:
+		case BACK:
+		case BODY:
+
+		case INTOP:
+		case INBOT:
+		case INFRO:
+		case INBAK:
+		case OUTTOP: 
+		case OUTBOT: 
+		case OUTFRO:
+		case OUTBAK:
+		case TOPFRO:
+		case TOPBAK:
+		case BOTFRO:
+		case BOTBAK:	
+		
+		case INTOPFRO:
+		case INTOPBAK:
+		case INBOTFRO:
+		case INBOTBAK:
+		case OUTTOPFRO:
+		case OUTTOPBAK:
+		case OUTBOTFRO:
+		case OUTBOTBAK:
+			break;
+		}
+	}
 }

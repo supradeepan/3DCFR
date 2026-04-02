@@ -12,9 +12,9 @@
     #ifdef _WIN32
         #define COMP 1
     #else
-        #ifdef __UNIX__
+        #ifdef __linux__
             #define COMP 2
-        #else
+        #else 
             #define COMP 0
         #endif
     #endif
@@ -93,11 +93,20 @@
     typedef struct
     {
         int Connect[MAXNODES];
+        //Tetrahedron is formed by connecting nodes in the order of a,b,c,d. 
+        // Node a is in Connect[0], Node b is in Connect[1], Node c is in Connect[2] and Node d is in Connect[3].
         int Neighbour[MAXFACES];
+        //For Faces, Please refer Gambit Neutral file format guide
+        //Face 1 is node a, b, c
+        //Face 2 is node a, b, d
+        //Face 3 is node b, c, d
+        //Face 4 is node a, c, d
+        //double Centroid[MAXCOMPONENTS];
         double Normals[MAXFACES][MAXCOMPONENTS];
         int Type;
         double FaceArea[MAXFACES];
         double Volume;
+        
     
         //STENCIL PARAMETERS
         int CellE, CellF, CellG, CellH, CellI, CellJ, CellK, CellL, CellM, CellN, CellO, CellQ;
